@@ -9,13 +9,34 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourname.geolocationtracking",
+      "infoPlist": {
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "[CHANGEME] This app requires location in the background",
+        "NSLocationWhenInUseUsageDescription": "We need your location to track your path.",
+        "NSMotionUsageDescription": "[CHANGEME] This app uses motion-detection to determine the motion-activity of the device (walking, vehicle, bicycle, etc)",
+        "UIBackgroundModes": [
+          "location",
+          "fetch",
+          "processing",
+          "audio"
+        ],
+        "BGTaskSchedulerPermittedIdentifiers": [
+          "com.transistorsoft.fetch",
+          "com.transistorsoft.customtask"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "package": "com.yourname.geolocationtracking"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +52,20 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "react-native-background-geolocation",
+        {
+          "license": "eb8ee62a24ca51c5d4c87f4fad356fb8660a6ae401b9d95642f7b80e7cc59c06"
+        }
+      ],
+      "react-native-background-fetch",
+      [
+        "expo-gradle-ext-vars",
+        {
+          "googlePlayServicesLocationVersion": "21.1.0",
+          "appCompatVersion": "1.4.2"
         }
       ]
     ],
